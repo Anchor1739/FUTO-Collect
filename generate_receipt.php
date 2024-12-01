@@ -2,6 +2,8 @@
 header('Content-Type: application/json');
 
 
+$cardNumber = $inputData['cardNumber'];
+$plateNumber = $inputData['plateNumber'];
 
 // length checker
 function validateLength($input, $length) {
