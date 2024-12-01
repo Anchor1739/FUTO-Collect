@@ -1,6 +1,15 @@
 <?php
 header('Content-Type: application/json');
 
+// Allow only POST requests 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["error" => "Only POST requests are allowed"]);
+    exit;
+}
+
+// Get input from POST request
+$inputData = json_decode(file_get_contents('php://input'), true);
 // Validate inputs
 if (!isset($inputData['cardNumber']) || !isset($inputData['plateNumber'])) {
     http_response_code(400); // Bad Request
