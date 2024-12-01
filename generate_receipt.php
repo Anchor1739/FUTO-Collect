@@ -1,6 +1,12 @@
 <?php
 header('Content-Type: application/json');
 
+// Validate inputs
+if (!isset($inputData['cardNumber']) || !isset($inputData['plateNumber'])) {
+    http_response_code(400); // Bad Request
+    echo json_encode(["error" => "Missing required parameters: cardNumber and plateNumber"]);
+    exit;
+}
 
 $cardNumber = $inputData['cardNumber'];
 $plateNumber = $inputData['plateNumber'];
