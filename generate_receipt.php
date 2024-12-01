@@ -3,6 +3,10 @@ header('Content-Type: application/json');
 
 
 
+// length checker
+function validateLength($input, $length) {
+    return strlen($input) === $length;
+}
 //return if user send empty inputs
 if (empty($cardNumber) || empty($plateNumber)) {
     http_response_code(400);
