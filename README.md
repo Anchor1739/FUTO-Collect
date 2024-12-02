@@ -81,8 +81,5 @@ The API validates inputs and returns appropriate error responses:
     }
     ```
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
